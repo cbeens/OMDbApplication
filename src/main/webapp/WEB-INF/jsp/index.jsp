@@ -38,9 +38,12 @@
 <form method="post" action="/add">
     <input type="submit" value="Add to Watchlist">
 </form>
+<form method="get" action="/load">
+    <input type="submit" value="Load your Watchlist">
+</form>
 
 <br>
-
+<h2>Your Watchlist</h2>
 <table>
     <tr>
         <th>Title</th>

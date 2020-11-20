@@ -27,6 +27,16 @@ public class Movie {
     //Constructors
     public Movie(){} //default constructor
 
+    public Movie(String title, String director, String desc, String genre, String rating, String poster){
+        this.id = UUID.randomUUID();
+        this.title = title;
+        this.director = director;
+        this.desc = desc;
+        this.genre = genre;
+        this.rating = rating;
+        this.poster = poster;
+    }
+
     //Getters and Setters
     public UUID getId() {
         return id;
