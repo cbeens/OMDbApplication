@@ -4,7 +4,7 @@
 <head>
     <title>Movie Watchlist Maker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
 <h1>Movie Watchlist Maker</h1>
@@ -20,13 +20,13 @@
 <div>
     <table>
         <tr>
-            <td><img src='<%=request.getParameter("poster")%>'></td>
+            <td><img src=${poster}></td>
             <td>
-                <h3>Title: </h3><p></p>
-                <h3>Director: </h3><p></p>
-                <h3>Description: </h3><p></p>
-                <h3>Genre: </h3><p></p>
-                <h3>Rating: </h3><p></p>
+                <p><strong>Title: </strong> ${title}</p>
+                <p><strong>Director: </strong> ${director}</p>
+                <p><strong>Description: </strong> ${desc}</p>
+                <p><strong>Genre: </strong> ${genre}</p>
+                <p><strong>Rating: </strong> ${rating}</p>
             </td>
         </tr>
     </table>
