@@ -44,13 +44,16 @@
 <form method="get" action="/load">
     <input type="submit" value="Load Watchlist">
 </form>
+<br>
+
 <table class="data">
     <colgroup>
         <col style="width:15%">
         <col style="width:15%">
         <col style="width:40%">
         <col style="width:15%">
-        <col style="width:15%">
+        <col style="width:5%">
+        <col style="width:10%">
     </colgroup>
     <tr>
         <th>Title</th>
@@ -58,6 +61,7 @@
         <th>Description</th>
         <th>Genre</th>
         <th>Rating</th>
+        <th>Options</th>
     </tr>
 
     <c:forEach var = "movie" items = "${movieslist}">
@@ -67,6 +71,9 @@
             <td>${movie.desc}</td>
             <td>${movie.genre}</td>
             <td>${movie.rating}</td>
+            <td>
+                <a href="/delete/${movie.getId()}">Delete</a>
+            </td>
         </tr>
     </c:forEach>
 
