@@ -42,8 +42,6 @@ public class MainController {
     public ModelAndView doHome() {
         page = new ModelAndView("index");
 
-        page.addObject("movieslist", movieRepo.findAll());
-
         page.addObject("poster", moviePoster);
         page.addObject("title", movieTitle);
         page.addObject("director", movieDirector);
@@ -57,25 +55,27 @@ public class MainController {
 
     @RequestMapping(value="/add", method= RequestMethod.POST)
     public ModelAndView add() {
+        page = new ModelAndView("redirect:/");
 
         Movie movie = new Movie(movieTitle, movieDirector, movieDesc, movieGenre, movieRating, moviePoster);
-
         movieRepo.save(movie);
 
-        ModelAndView page = new ModelAndView("redirect:/");
-        page.addObject("movieslist", movieRepo.findAll());
         return page;
     }
 
     @RequestMapping(value = "/search", method=RequestMethod.GET)
     public ModelAndView search(@RequestParam("search") String movie) {
-
+        page = new ModelAndView("redirect:/");
         //modify movie string, replacing empty spaces with + sign for GET
         movie = movie.replaceAll("\\s","+");
-
-        page = new ModelAndView("redirect:/");
         getMovie(movie);
 
+        return page;
+    }
+
+    @RequestMapping(value = "/load", method=RequestMethod.GET)
+    public ModelAndView load() {
+        page.addObject("movieslist", movieRepo.findAll());
         return page;
     }
 

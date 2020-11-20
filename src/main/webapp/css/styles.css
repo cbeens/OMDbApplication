@@ -1,0 +1,46 @@
+body {
+    font-family: arial, sans-serif;
+}
+
+table.data {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.data th {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.data th, td, tr {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+.data tr:hover {
+    background-color: #dddddd;
+}
+
+
+form.search-bar input[type=text]{
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    width: 40%
+}
+
+form.search-bar button {
+    width: 10%;
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    border-left: none;
+}
+
+form.search-bar button:hover {
+    background: #dddddd;
+}
